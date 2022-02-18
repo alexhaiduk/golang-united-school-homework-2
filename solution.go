@@ -22,13 +22,24 @@ const (
 func CalcSquare(sideLen float64, sidesNum Sides) float64 {
 	var result float64
 	if sidesNum == SidesCircle {
-		result = 0.0
+		return math.Pi * math.Pow(sideLen, 2)
 	} else if sidesNum == SidesTriangle {
-		result = 0.0
+		return (math.Sqrt(3) * math.Pow(sideLen, 2)) / 4
 	} else if sidesNum == SidesSquare {
-		result = 0.0
+		return math.Pow(sideLen, 2)
 	} else {
 		return 0
 	}
-	return result
+	/*
+		switch sidesNum {
+		default:
+			return 0
+		case SidesCircle:
+			return math.Pi * math.Pow(sideLen, 2)
+		case SidesTriangle:
+			return (math.Sqrt(3) * math.Pow(sideLen, 2)) / 4
+		case SidesSquare:
+			return math.Pow(sideLen, 2)
+		}
+	*/
 }
